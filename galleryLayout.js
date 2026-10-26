@@ -327,6 +327,7 @@ function withBase(items) {
   }
 }
 withBase(INTERIOR_ITEMS);
+withBase(GALLERY_ITEMS);
 
 
 
