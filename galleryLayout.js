@@ -315,7 +315,18 @@ export const INTERIOR_ITEMS = [
     { id: "dorsa-81", fileNum: 81, fileName: "81webp.webp", plateLabel: "Plate 26", title: "The Weaver's Arch — 2.87m Wireframe Pod CAD & Render", src: "/assets/aistudio/81webp_5269d951.webp", width: 1920, height: 1080, isUploaded: true },
     { id: "dorsa-82", fileNum: 82, fileName: "82webp.webp", plateLabel: "Plate 27", title: "Open Design Studio — Collaborative Lounge & Pin-Up Wall", src: "/assets/aistudio/82webp_b50f1441.webp", width: 1920, height: 1080, isUploaded: true },
     { id: "dorsa-83", fileNum: 83, fileName: "83webp.webp", plateLabel: "Plate 28", title: "Dorsa Design Studio — Architectural Presentation Board", src: "/assets/aistudio/83webp_113f9860.webp", width: 1920, height: 1080, isUploaded: true },
-];
+   ];
+
+// Prefix asset paths with the site's base path (needed on GitHub Pages)
+const BASE = import.meta.env.BASE_URL;
+function withBase(items) {
+  for (const item of items) {
+    if (item.src && item.src.startsWith('/')) {
+      item.src = BASE + item.src.slice(1);
+    }
+  }
+}
+withBase(INTERIOR_ITEMS);
 
 
 
