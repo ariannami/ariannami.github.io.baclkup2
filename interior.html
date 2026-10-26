@@ -1,0 +1,828 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interior Design – Arian Nami</title>
+    <meta name="description" content="Spatial Architecture & Adaptive Reuse by Arian Nami — transformative commercial interiors and collaborative design studios shaped by brand heritage, fluid zoning, and bespoke architectural framing.">
+    <meta property="og:title" content="Interior Design – Arian Nami">
+    <meta property="og:description" content="Spatial Architecture & Adaptive Reuse by Arian Nami — transformative commercial interiors and collaborative design studios shaped by brand heritage, fluid zoning, and bespoke architectural framing.">
+    <meta property="og:type" content="website">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-primary: #0E0E10;
+            --bg-elevated: #141418;
+            --bg-card: #18181E;
+            --text-primary: #F4F4F6;
+            --text-secondary: #B8B8C2;
+            --text-muted: #7C7C88;
+            --accent: #7f072b;
+            --accent-soft: rgba(127, 7, 43, 0.22);
+            --rule: rgba(255, 255, 255, 0.11);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            background-color: var(--bg-primary);
+            color: var(--text-primary);
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        body {
+            background-color: var(--bg-primary);
+            color: var(--text-primary);
+            overflow-x: hidden;
+            line-height: 1.65;
+        }
+
+        /* Floating Back Button */
+        .floating-back {
+            position: fixed;
+            top: 28px;
+            left: 32px;
+            z-index: 60;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 18px;
+            background: rgba(14, 14, 16, 0.82);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid var(--rule);
+            color: var(--text-primary);
+            text-decoration: none;
+            font-size: 0.78rem;
+            font-weight: 600;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            transition: border-color 0.2s ease, background 0.2s ease, transform 0.2s ease;
+        }
+
+        .floating-back:hover {
+            border-color: var(--accent);
+            background: rgba(127, 7, 43, 0.26);
+            transform: translateX(-2px);
+        }
+
+        /* Left/Right Fixed Project Switchers */
+        .proj-nav-arrow {
+            position: fixed;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 50;
+            width: 44px;
+            height: 64px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: rgba(255, 255, 255, 0.45);
+            text-decoration: none;
+            font-size: 2rem;
+            font-weight: 200;
+            transition: color 0.2s ease, background 0.2s ease;
+        }
+
+        .proj-nav-arrow:hover {
+            color: #ffffff;
+            background: rgba(255, 255, 255, 0.04);
+        }
+
+        .proj-nav-prev { left: 8px; }
+        .proj-nav-next { right: 8px; }
+
+        .int-container {
+            max-width: 1240px;
+            margin: 0 auto;
+            padding: 0 40px;
+        }
+
+        /* Editorial Hero Header */
+        .int-hero {
+            padding: 132px 0 72px;
+            border-bottom: 1px solid var(--rule);
+        }
+
+        .int-kicker {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: var(--accent);
+            margin-bottom: 20px;
+        }
+
+        .int-kicker::before {
+            content: "";
+            display: inline-block;
+            width: 28px;
+            height: 1px;
+            background: var(--accent);
+        }
+
+        .int-hero-grid {
+            display: grid;
+            grid-template-columns: 7fr 5fr;
+            gap: 56px;
+            align-items: end;
+        }
+
+        .int-title {
+            font-size: clamp(3rem, 6.4vw, 5.4rem);
+            font-weight: 300;
+            letter-spacing: -0.035em;
+            line-height: 0.98;
+            text-transform: uppercase;
+            color: var(--text-primary);
+        }
+
+        .int-title strong {
+            font-weight: 700;
+            display: block;
+            color: #ffffff;
+        }
+
+        .int-lead {
+            font-size: clamp(1rem, 1.2vw, 1.12rem);
+            color: var(--text-secondary);
+            line-height: 1.78;
+            font-weight: 300;
+        }
+
+        /* 4-Column Architectural Pillars Bar */
+        .int-pillars {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 28px;
+            padding: 40px 0;
+            border-bottom: 1px solid var(--rule);
+        }
+
+        .int-pillar-num {
+            font-size: 0.7rem;
+            font-weight: 700;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+            color: var(--accent);
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        .int-pillar-title {
+            font-size: 0.96rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 6px;
+        }
+
+        .int-pillar-desc {
+            font-size: 0.84rem;
+            color: var(--text-muted);
+            line-height: 1.6;
+        }
+
+        /* Materiality & Atmosphere Swatch Strip */
+        .int-materials {
+            padding: 56px 0;
+            border-bottom: 1px solid var(--rule);
+        }
+
+        .int-section-label {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 28px;
+        }
+
+        .int-section-label h2 {
+            font-size: 0.78rem;
+            font-weight: 600;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+            color: var(--text-secondary);
+        }
+
+        .int-section-label span {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            letter-spacing: 0.08em;
+        }
+
+        .swatch-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+
+        .swatch-card {
+            background: var(--bg-elevated);
+            border: 1px solid var(--rule);
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+            transition: border-color 0.25s ease;
+        }
+
+        .swatch-card:hover {
+            border-color: var(--accent);
+        }
+
+        .swatch-sample {
+            width: 100%;
+            height: 76px;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .swatch-micro-cement {
+            background: linear-gradient(135deg, #9d9c98 0%, #6f6e6a 52%, #b7b5b0 100%);
+        }
+
+        .swatch-oak-wood {
+            background: linear-gradient(135deg, #9b7046 0%, #6d4b2b 58%, #b6895c 100%);
+        }
+
+        .swatch-gold-dark-metal {
+            background: linear-gradient(135deg, #b59453 0%, #7d6331 38%, #27292e 68%, #18191d 100%);
+        }
+
+        .swatch-crimson-textile {
+            background: linear-gradient(135deg, #7f072b 0%, #440417 65%, #9e113b 100%);
+        }
+
+        .swatch-name {
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: var(--text-primary);
+        }
+
+        .swatch-meta {
+            font-size: 0.76rem;
+            color: var(--text-muted);
+            line-height: 1.5;
+        }
+
+        /* Editorial Spatial Chapters */
+        .int-chapter {
+            padding: 84px 0;
+            border-bottom: 1px solid var(--rule);
+        }
+
+        .int-chapter-head {
+            display: grid;
+            grid-template-columns: 4fr 8fr;
+            gap: 40px;
+            margin-bottom: 44px;
+            align-items: start;
+        }
+
+        .int-chapter-index {
+            font-size: 0.74rem;
+            font-weight: 700;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+            color: var(--accent);
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        .int-chapter-title {
+            font-size: clamp(1.75rem, 2.8vw, 2.5rem);
+            font-weight: 400;
+            letter-spacing: -0.02em;
+            line-height: 1.15;
+            color: var(--text-primary);
+        }
+
+        .int-chapter-copy {
+            font-size: 0.96rem;
+            color: var(--text-secondary);
+            line-height: 1.8;
+            max-width: 66ch;
+        }
+
+        /* 12-Col Spatial Layout Grid */
+        .int-grid {
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            gap: 20px;
+            grid-auto-flow: dense;
+        }
+
+        .span-12 { grid-column: span 12; }
+        .span-8  { grid-column: span 8; }
+        .span-7  { grid-column: span 7; }
+        .span-6  { grid-column: span 6; }
+        .span-5  { grid-column: span 5; }
+        .span-4  { grid-column: span 4; }
+
+        /* Interactive Spatial Image Frame */
+        .int-slot {
+            position: relative;
+            width: 100%;
+            background: linear-gradient(145deg, #16161c 0%, #101014 100%);
+            border: 1px solid var(--rule);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 24px;
+            cursor: pointer;
+            transition: border-color 0.25s ease, transform 0.25s ease, background 0.25s ease;
+        }
+
+        .int-slot:hover {
+            border-color: var(--accent);
+            background: linear-gradient(145deg, #1b171d 0%, #121116 100%);
+        }
+
+        .int-slot.has-image {
+            padding: 0;
+            background: #0b0b0e;
+        }
+
+        .int-slot img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+        }
+
+        .int-slot.has-image:hover img {
+            transform: scale(1.025);
+        }
+
+        .int-slot-caption {
+            position: absolute;
+            inset: auto 0 0 0;
+            padding: 18px 20px 14px;
+            background: linear-gradient(to top, rgba(10, 10, 13, 0.88) 0%, rgba(10, 10, 13, 0) 100%);
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            gap: 12px;
+            opacity: 0;
+            transition: opacity 0.22s ease;
+            pointer-events: none;
+            text-align: left;
+        }
+
+        .int-slot.has-image:hover .int-slot-caption {
+            opacity: 1;
+        }
+
+        .int-slot-caption-title {
+            font-size: 0.82rem;
+            font-weight: 600;
+            color: #ffffff;
+        }
+
+        .int-slot-caption-meta {
+            font-size: 0.68rem;
+            font-weight: 600;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+            color: #d6c5cc;
+            white-space: nowrap;
+        }
+
+        .int-slot-tag {
+            font-size: 0.68rem;
+            font-weight: 700;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+            color: var(--accent);
+            margin-bottom: 8px;
+        }
+
+        .int-slot-title {
+            font-size: 0.96rem;
+            font-weight: 500;
+            color: var(--text-primary);
+            margin-bottom: 6px;
+        }
+
+        .int-slot-sub {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+        }
+
+        /* Upload & Filter Toolbar */
+        .int-toolbar {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            gap: 16px;
+            padding: 18px 24px;
+            background: var(--bg-elevated);
+            border: 1px solid var(--rule);
+            margin-bottom: 24px;
+        }
+
+        .int-toolbar-info {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+        }
+
+        .int-toolbar-info strong {
+            color: var(--text-primary);
+        }
+
+        .int-toolbar-actions {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .int-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 18px;
+            border: 1px solid var(--rule);
+            background: rgba(255, 255, 255, 0.03);
+            color: var(--text-primary);
+            font-family: inherit;
+            font-size: 0.75rem;
+            font-weight: 600;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: border-color 0.2s ease, background 0.2s ease;
+        }
+
+        .int-btn:hover {
+            border-color: var(--accent);
+            background: var(--accent-soft);
+        }
+
+        .int-btn.primary {
+            background: var(--accent);
+            border-color: var(--accent);
+            color: #ffffff;
+        }
+
+        /* Lightbox Dialog */
+        .int-lightbox {
+            border: none;
+            background: rgba(10, 10, 14, 0.94);
+            color: var(--text-primary);
+            width: 100vw;
+            height: 100vh;
+            max-width: 100vw;
+            max-height: 100vh;
+            padding: 32px;
+        }
+
+        .int-lightbox::backdrop {
+            background: rgba(0, 0, 0, 0.88);
+        }
+
+        .int-lightbox-inner {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .int-lightbox-top,
+        .int-lightbox-bottom {
+            width: 100%;
+            max-width: 1240px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .int-lightbox-img {
+            max-width: min(1240px, 92vw);
+            max-height: 76vh;
+            object-fit: contain;
+            border: 1px solid var(--rule);
+        }
+
+        /* Footer */
+        .int-footer {
+            padding: 56px 0 80px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            color: var(--text-muted);
+            font-size: 0.85rem;
+        }
+
+        .int-footer-links {
+            display: flex;
+            gap: 24px;
+        }
+
+        .int-footer-links a {
+            color: var(--text-primary);
+            text-decoration: none;
+            font-size: 0.8rem;
+            font-weight: 600;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            border-bottom: 1px solid var(--accent);
+            padding-bottom: 4px;
+        }
+
+        @media (max-width: 960px) {
+            .proj-nav-arrow { display: none; }
+            .int-container { padding: 0 20px; }
+            .int-hero-grid,
+            .int-chapter-head { grid-template-columns: 1fr; gap: 24px; }
+            .int-pillars,
+            .swatch-grid { grid-template-columns: repeat(2, 1fr); }
+            .span-8, .span-7, .span-6, .span-5, .span-4 { grid-column: span 12; }
+        }
+
+        @media (max-width: 560px) {
+            .int-pillars,
+            .swatch-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body id="top">
+    <!-- Floating Back Button -->
+    <a href="./projects.html" class="floating-back" aria-label="Back to Projects">← Back</a>
+
+    <!-- Left/Right Project Switchers -->
+    <a href="./sarv.html" class="proj-nav-arrow proj-nav-prev" title="Previous Project: Sarv" aria-label="Previous Project: Sarv">&#8249;</a>
+    <a href="./gallery.html" class="proj-nav-arrow proj-nav-next" title="Next Project: General 3D gallery" aria-label="Next Project: General 3D gallery">&#8250;</a>
+
+    <main class="int-container">
+        <!-- Hero Section -->
+        <header class="int-hero">
+            <span class="int-kicker">04 &nbsp;/&nbsp; Spatial Architecture &amp; Adaptive Reuse</span>
+            <div class="int-hero-grid">
+                <h1 class="int-title">
+                    Interior
+                    <strong>Design</strong>
+                </h1>
+                <p class="int-lead">
+                    Transformative commercial interiors and collaborative design studios shaped by brand heritage, fluid zoning, and bespoke architectural framing. Every space is conceived to balance raw industrial shells with precision-crafted luxury.
+                </p>
+            </div>
+        </header>
+
+        <!-- 4 Architectural Pillars -->
+        <section class="int-pillars" aria-label="Interior Design Methodology">
+            <div>
+                <span class="int-pillar-num">01 / Volume</span>
+                <h2 class="int-pillar-title">Implied Boundaries</h2>
+                <p class="int-pillar-desc">Stripping back rigid partitions to create open-plan ecosystems using tension cables and floor transitions to define private zones without blocking natural light or sightlines.</p>
+            </div>
+            <div>
+                <span class="int-pillar-num">02 / Materiality</span>
+                <h2 class="int-pillar-title">Raw &amp; Refined Surfaces</h2>
+                <p class="int-pillar-desc">Contrasting untreated, monolithic textures like raw stone and micro-cement with the warmth of oak wood and precision-machined dark metal.</p>
+            </div>
+            <div>
+                <span class="int-pillar-num">03 / Illumination</span>
+                <h2 class="int-pillar-title">Choreographed Light</h2>
+                <p class="int-pillar-desc">Maximizing natural daylight through open sightlines, paired with integrated LED ceiling strips and targeted task lighting to create an energetic, focused workspace.</p>
+            </div>
+            <div>
+                <span class="int-pillar-num">04 / Custom Fixtures</span>
+                <h2 class="int-pillar-title">The Weaver's Arch</h2>
+                <p class="int-pillar-desc">Abstracting traditional Sassanid geometries into modern, semi-transparent wireframe meeting pods and suspended, gravity-defying collaborative desks.</p>
+            </div>
+        </section>
+
+        <!-- Material & Finish Palette -->
+        <section class="int-materials" aria-label="Material Palette">
+            <div class="int-section-label">
+                <h2>Curated Material &amp; Finish Palette</h2>
+                <span>TACTILE ARCHITECTURAL SWATCHES</span>
+            </div>
+            <div class="swatch-grid">
+                <div class="swatch-card">
+                    <div class="swatch-sample swatch-micro-cement"></div>
+                    <div>
+                        <p class="swatch-name">Micro-Cement &amp; Raw Stone</p>
+                        <p class="swatch-meta">Untreated, industrial base textures for open-plan flooring and sculptural meeting table bases, representing raw nature.</p>
+                    </div>
+                </div>
+                <div class="swatch-card">
+                    <div class="swatch-sample swatch-oak-wood"></div>
+                    <div>
+                        <p class="swatch-name">Oak Wood</p>
+                        <p class="swatch-meta">Warm, natural timber bringing organic tactility to the management office and collaborative workstations.</p>
+                    </div>
+                </div>
+                <div class="swatch-card">
+                    <div class="swatch-sample swatch-gold-dark-metal"></div>
+                    <div>
+                        <p class="swatch-name">Gold Steel &amp; Dark Metal</p>
+                        <p class="swatch-meta">Architectural framing and vertical tension cables representing precision, modern luxury, and structural transparency.</p>
+                    </div>
+                </div>
+                <div class="swatch-card">
+                    <div class="swatch-sample swatch-crimson-textile"></div>
+                    <div>
+                        <p class="swatch-name">Crimson Textile</p>
+                        <p class="swatch-meta">Deep red upholstery and acoustic accents providing a direct visual nod to the Dorsa brand's legacy of leather craftsmanship.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Chapter 01: Dorsa Design Studio -->
+        <section class="int-chapter" id="dorsa-studio">
+            <div class="int-chapter-head">
+                <div>
+                    <span class="int-chapter-index">Chapter 01 &nbsp;·&nbsp; Dorsa Design Studio</span>
+                    <h2 class="int-chapter-title">Adaptive Reuse &amp; Brand Architecture</h2>
+                </div>
+                <p class="int-chapter-copy">
+                    Designed as a fluid collaborative ecosystem, this 140-square-meter adaptive reuse project transforms a rigid administrative unit into a transparent, open-plan workspace. By utilizing vertical tension cables to "weave" the space, it unites the Design and Marketing teams while physically embodying the Dorsa brand’s luxurious, crafted identity.
+                </p>
+            </div>
+
+            <div class="int-toolbar">
+                <div class="int-toolbar-info">
+                    <strong>Dorsa Design Studio Spatial Plates (56webp.webp – 83webp.webp)</strong> &nbsp;·&nbsp; <span id="int-count-label">28 Architectural Plates</span>
+                </div>
+            </div>
+
+            <div class="int-grid" id="int-grid" data-testid="dorsa-interior-grid"></div>
+        </section>
+
+        <footer class="int-footer">
+            <span>INTERIOR DESIGN &nbsp;·&nbsp; Spatial Architecture &amp; Adaptive Reuse</span>
+            <div class="int-footer-links">
+                <a href="./sarv.html">← Prev: Sarv</a>
+                <a href="./projects.html">All Projects</a>
+                <a href="./gallery.html">Next: General 3D gallery →</a>
+            </div>
+        </footer>
+    </main>
+
+    <!-- Full-Resolution Spatial Lightbox -->
+    <dialog class="int-lightbox" id="int-lightbox" aria-label="Interior Render Lightbox">
+        <div class="int-lightbox-inner">
+            <div class="int-lightbox-top">
+                <span id="int-lightbox-caption" style="font-size: 0.85rem; color: var(--text-secondary);"></span>
+                <button type="button" class="int-btn" id="int-lightbox-close">Close ✕</button>
+            </div>
+            <img id="int-lightbox-img" class="int-lightbox-img" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="Interior Render Full View">
+            <div class="int-lightbox-bottom">
+                <button type="button" class="int-btn" id="int-lightbox-prev">← Prev Plate</button>
+                <button type="button" class="int-btn" id="int-lightbox-next">Next Plate →</button>
+            </div>
+        </div>
+    </dialog>
+
+    <script type="module">
+        import { INTERIOR_ITEMS } from './galleryLayout.js';
+
+        const grid = document.getElementById('int-grid');
+        const countLabel = document.getElementById('int-count-label');
+
+        const lightbox = document.getElementById('int-lightbox');
+        const lightboxImg = document.getElementById('int-lightbox-img');
+        const lightboxCaption = document.getElementById('int-lightbox-caption');
+        const lightboxClose = document.getElementById('int-lightbox-close');
+        const lightboxPrev = document.getElementById('int-lightbox-prev');
+        const lightboxNext = document.getElementById('int-lightbox-next');
+
+        // Full-width feature boards (12 cols) vs paired/trio architectural plates (6+6 or 4+4+4)
+        // Every row sums to 12 columns and every frame is exact 16:9 so plans/text never crop.
+        const SPAN_BY_FILE_NUM = {
+            56: 12, // Plate 01: The Challenge & Existing Site Context
+            57: 12, // Plate 02: Concept: The Weaver's Arch
+            58: 6,  // Plate 03: Spatial Configuration & Zoning Plan
+            59: 6,  // Plate 04: Master Plan & 3D Axonometric Cutaway
+            60: 6,  // Plate 05: Zone Key: Manager's Office
+            61: 6,  // Plate 06: Manager's Office Wide
+            62: 6,  // Plate 07: Manager's Office Oak Shelving
+            63: 6,  // Plate 08: Manager's Office Executive Desk
+            64: 6,  // Plate 09: Manager's Office Lounge
+            65: 6,  // Plate 10: Manager's Office Joinery Detail
+            66: 6,  // Plate 11: Zone Key: Main Conference Room
+            67: 6,  // Plate 12: Restroom & Custom Door Detail
+            68: 6,  // Plate 13: Zone Key: Marketing & Strategy Room
+            69: 6,  // Plate 14: Zone Key: Breakout Area
+            70: 6,  // Plate 15: Main Conference Room I
+            71: 6,  // Plate 16: Main Conference Room II
+            72: 6,  // Plate 17: Zone Key: Open Design Studio
+            73: 6,  // Plate 18: Main Conference Room III
+            74: 12, // Plate 19: Suspended Collaborative Desk 2m CAD & Render
+            75: 6,  // Plate 20: Marketing & Strategy Room I
+            76: 6,  // Plate 21: Marketing & Strategy Room II
+            77: 4,  // Plate 22: Modular Chrome & Glass Display Shelving
+            78: 4,  // Plate 23: Breakout Area I
+            79: 4,  // Plate 24: Breakout Area II
+            80: 6,  // Plate 25: Open Design Studio Suspended Table
+            81: 6,  // Plate 26: The Weaver's Arch 2.87m CAD & Render
+            82: 12, // Plate 27: Open Design Studio Collaborative Lounge
+            83: 12, // Plate 28: Dorsa Design Studio Master Architectural Board
+        };
+
+        const items = INTERIOR_ITEMS.map((item) => ({
+            ...item,
+            colSpan: SPAN_BY_FILE_NUM[item.fileNum] || 6,
+            aspectCss: '16 / 9',
+        }));
+        let currentLightboxIndex = 0;
+
+        function getImageSrc(item) {
+            return item.src || '';
+        }
+
+        function openLightbox(itemId) {
+            const idx = items.findIndex((it) => it.id === itemId);
+            if (idx === -1) return;
+            currentLightboxIndex = idx;
+            updateLightboxView();
+            if (lightbox && !lightbox.open) {
+                lightbox.showModal();
+            }
+        }
+
+        function updateLightboxView() {
+            const item = items[currentLightboxIndex];
+            if (!item) return;
+            lightboxImg.src = getImageSrc(item);
+            lightboxImg.alt = `${item.plateLabel} — ${item.title}`;
+            lightboxCaption.textContent = `${item.plateLabel} · ${item.title} (${item.fileName})`;
+        }
+
+        function renderGrid() {
+            if (countLabel) {
+                countLabel.textContent = `${items.length} Architectural Plates`;
+            }
+
+            grid.innerHTML = '';
+
+            items.forEach((item, idx) => {
+                const slot = document.createElement('button');
+                slot.type = 'button';
+                slot.className = `int-slot span-${item.colSpan || 6} has-image`;
+                slot.style.aspectRatio = item.aspectCss || '16 / 9';
+                slot.style.fontFamily = 'inherit';
+                slot.dataset.slotId = item.id;
+                slot.dataset.fileName = item.fileName;
+                slot.setAttribute('aria-label', `${item.plateLabel} — ${item.title} (${item.fileName})`);
+
+                const imgSrc = getImageSrc(item);
+                slot.innerHTML = `
+                    <img src="${imgSrc}" alt="${item.plateLabel} — ${item.title}" loading="${idx < 4 ? 'eager' : 'lazy'}" decoding="async">
+                    <div class="int-slot-caption">
+                        <span class="int-slot-caption-title">${item.title}</span>
+                        <span class="int-slot-caption-meta">${item.plateLabel} · ${item.fileName}</span>
+                    </div>
+                `;
+
+                slot.addEventListener('click', () => {
+                    openLightbox(item.id);
+                });
+
+                grid.appendChild(slot);
+            });
+        }
+
+        lightboxClose?.addEventListener('click', () => lightbox?.close());
+        lightbox?.addEventListener('click', (e) => {
+            if (e.target === lightbox) lightbox.close();
+        });
+
+        lightboxPrev?.addEventListener('click', () => {
+            if (!items.length) return;
+            currentLightboxIndex = (currentLightboxIndex - 1 + items.length) % items.length;
+            updateLightboxView();
+        });
+
+        lightboxNext?.addEventListener('click', () => {
+            if (!items.length) return;
+            currentLightboxIndex = (currentLightboxIndex + 1) % items.length;
+            updateLightboxView();
+        });
+
+        renderGrid();
+    </script>
+</body>
+</html>

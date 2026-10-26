@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080" width="1920" height="1080">
+  <defs>
+    <radialGradient id="studioGlow3" cx="58%" cy="48%" r="55%">
+      <stop offset="0%" stop-color="#291d17" stop-opacity="1"/>
+      <stop offset="55%" stop-color="#121214" stop-opacity="1"/>
+      <stop offset="100%" stop-color="#070708" stop-opacity="1"/>
+    </radialGradient>
+    <linearGradient id="polymerShell" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#2e3136"/>
+      <stop offset="50%" stop-color="#1b1d21"/>
+      <stop offset="100%" stop-color="#0e1013"/>
+    </linearGradient>
+  </defs>
+  <rect width="1920" height="1080" fill="url(#studioGlow3)"/>
+  <g transform="translate(1080, 510)">
+    <ellipse cx="0" cy="260" rx="360" ry="50" fill="rgba(0,0,0,0.75)"/>
+    <!-- Hard Case Outer Body -->
+    <rect x="-270" y="-190" width="540" height="380" rx="36" fill="url(#polymerShell)" stroke="#4c5059" stroke-width="3"/>
+    <rect x="-240" y="-160" width="480" height="320" rx="22" fill="#131519" stroke="rgba(255,153,0,0.45)" stroke-width="1.5"/>
+    <!-- Molded Handle -->
+    <path d="M-95,-190 L-75,-245 L75,-245 L95,-190" fill="none" stroke="#3c4048" stroke-width="22" stroke-linecap="round" stroke-linejoin="round"/>
+    <rect x="-55" y="-252" width="110" height="14" rx="7" fill="#ff9900"/>
+    <!-- Anodized Latches -->
+    <rect x="-175" y="-202" width="46" height="28" rx="4" fill="#ff9900"/>
+    <rect x="129" y="-202" width="46" height="28" rx="4" fill="#ff9900"/>
+    <!-- Medical Cross & RFID Telemetry Ring -->
+    <circle cx="0" cy="0" r="105" fill="#0d0e11" stroke="#2c3038" stroke-width="4"/>
+    <circle cx="0" cy="0" r="86" fill="none" stroke="#ff9900" stroke-width="2" stroke-dasharray="28 14"/>
+    <rect x="-16" y="-48" width="32" height="96" rx="4" fill="#ff9900"/>
+    <rect x="-48" y="-16" width="96" height="32" rx="4" fill="#ff9900"/>
+    <!-- RFID Signal Waves -->
+    <path d="M135,-45 A75,75 0 0,1 135,45" fill="none" stroke="rgba(255,153,0,0.65)" stroke-width="3" stroke-linecap="round"/>
+    <path d="M160,-65 A105,105 0 0,1 160,65" fill="none" stroke="rgba(255,153,0,0.35)" stroke-width="3" stroke-linecap="round"/>
+  </g>
+</svg>

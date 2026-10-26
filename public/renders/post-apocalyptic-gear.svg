@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080" width="1920" height="1080">
+  <defs>
+    <radialGradient id="studioGlow4" cx="55%" cy="45%" r="60%">
+      <stop offset="0%" stop-color="#2d1f14" stop-opacity="1"/>
+      <stop offset="50%" stop-color="#141110" stop-opacity="1"/>
+      <stop offset="100%" stop-color="#080707" stop-opacity="1"/>
+    </radialGradient>
+    <linearGradient id="armorPlate" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#3b3632"/>
+      <stop offset="55%" stop-color="#1f1c1a"/>
+      <stop offset="100%" stop-color="#0e0d0c"/>
+    </linearGradient>
+    <radialGradient id="amberOptic" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#ffaa22" stop-opacity="0.95"/>
+      <stop offset="45%" stop-color="#ff7700" stop-opacity="0.45"/>
+      <stop offset="100%" stop-color="#000000" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="1920" height="1080" fill="url(#studioGlow4)"/>
+  <g transform="translate(1080, 500)">
+    <ellipse cx="0" cy="290" rx="310" ry="45" fill="rgba(0,0,0,0.8)"/>
+    <!-- Tactical Helmet Dome & Mandible Guard -->
+    <path d="M-190,-60 C-195,-220 195,-220 190,-60 L210,110 L125,215 L-125,215 L-210,110 Z" fill="url(#armorPlate)" stroke="#5c534c" stroke-width="3"/>
+    <!-- Visor Assembly -->
+    <path d="M-155,-45 L155,-45 L175,45 L-175,45 Z" fill="#0d0c0c" stroke="#ff9900" stroke-width="2.5"/>
+    <!-- Asymmetric Dual Optical Lenses -->
+    <circle cx="-68" cy="0" r="34" fill="#1a1715" stroke="#b88644" stroke-width="4"/>
+    <circle cx="-68" cy="0" r="48" fill="url(#amberOptic)"/>
+    <circle cx="65" cy="0" r="22" fill="#1a1715" stroke="#b88644" stroke-width="3"/>
+    <circle cx="65" cy="0" r="32" fill="url(#amberOptic)"/>
+    <!-- Respirator Canisters -->
+    <rect x="-150" y="85" width="75" height="95" rx="14" fill="#171514" stroke="#6e6259" stroke-width="2.5"/>
+    <rect x="75" y="85" width="75" height="95" rx="14" fill="#171514" stroke="#6e6259" stroke-width="2.5"/>
+    <line x1="-45" y1="120" x2="45" y2="120" stroke="#ff9900" stroke-width="3"/>
+    <line x1="-45" y1="145" x2="45" y2="145" stroke="#786b60" stroke-width="3"/>
+  </g>
+</svg>

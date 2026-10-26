@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080" width="1920" height="1080">
+  <defs>
+    <linearGradient id="twilightSky" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1b1f26"/>
+      <stop offset="55%" stop-color="#111317"/>
+      <stop offset="100%" stop-color="#08090b"/>
+    </linearGradient>
+    <linearGradient id="warmConcrete" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#2c2a29"/>
+      <stop offset="100%" stop-color="#171616"/>
+    </linearGradient>
+    <linearGradient id="warmSunbeam" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ff9900" stop-opacity="0.32"/>
+      <stop offset="60%" stop-color="#ff9900" stop-opacity="0.08"/>
+      <stop offset="100%" stop-color="#ff9900" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <rect width="1920" height="1080" fill="url(#twilightSky)"/>
+  <!-- Brutalist Monolithic Concrete Columns & Cantilever -->
+  <polygon points="180,120 1480,120 1320,260 340,260" fill="url(#warmConcrete)" stroke="rgba(255,255,255,0.12)" stroke-width="1.5"/>
+  <polygon points="340,260 520,260 520,820 340,890" fill="#1e1d1c" stroke="rgba(255,255,255,0.08)" stroke-width="1"/>
+  <polygon points="780,260 940,260 940,780 780,820" fill="#252322" stroke="rgba(255,255,255,0.08)" stroke-width="1"/>
+  <polygon points="1160,260 1320,260 1320,820 1160,780" fill="#1a1918" stroke="rgba(255,255,255,0.08)" stroke-width="1"/>
+  <!-- Architectural Linear Light Strip -->
+  <line x1="340" y1="260" x2="1320" y2="260" stroke="#ff9900" stroke-width="4"/>
+  <!-- Volumetric Light Shafts -->
+  <polygon points="520,260 780,260 1120,940 720,940" fill="url(#warmSunbeam)"/>
+  <polygon points="940,260 1160,260 1520,940 1210,940" fill="url(#warmSunbeam)"/>
+  <!-- Reflective Dark Stone Horizon -->
+  <line x1="0" y1="820" x2="1920" y2="820" stroke="rgba(255,153,0,0.28)" stroke-width="1.5"/>
+</svg>

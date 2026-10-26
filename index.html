@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arian Nami | Index</title>
+    <meta name="description" content="Minimalist interactive hover-list portfolio homepage for Arian Nami, Industrial Designer & 3D Artist, with English and Persian (RTL) support.">
+    <meta property="og:title" content="Arian Nami | Index">
+    <meta property="og:description" content="Minimalist interactive hover-list portfolio homepage for Arian Nami, Industrial Designer & 3D Artist, with English and Persian (RTL) support.">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="stylesheet" href="/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+</head>
+<body data-menu-open="false">
+    <!-- The background image for the home page -->
+    <img src="/assets/aistudio/statue_5a8e5ef3.webp" alt="3D Render of Classical Bust with Amber Sunglasses on Translucent Cassettes" class="bg-reveal" id="bg-reveal" referrerpolicy="no-referrer">
+    <div class="bg-overlay"></div>
+
+    <header class="top-header">
+        <div class="logo" id="brand-logo" role="img" aria-label="Arian Nami Logo"></div>
+        <p class="description">Arian Nami &nbsp;/&nbsp; Industrial Designer &amp; 3D Artist</p>
+        <div class="contact-info">
+            <span>Available for freelance</span>
+        </div>
+        <div class="controls">
+            <button
+                type="button"
+                id="menu-toggle"
+                class="menu-btn sm-toggle"
+                aria-expanded="false"
+                aria-controls="staggered-menu-panel"
+                aria-label="Open menu"
+            >
+                <span class="sm-toggle-textWrap" aria-hidden="true">
+                    <span class="sm-toggle-textInner" id="sm-toggle-textInner">
+                        <span class="sm-toggle-line">Menu</span>
+                        <span class="sm-toggle-line">Close</span>
+                    </span>
+                </span>
+                <span class="sm-icon" id="sm-toggle-icon" aria-hidden="true">
+                    <span class="sm-icon-line" id="sm-icon-line-h"></span>
+                    <span class="sm-icon-line sm-icon-line-v" id="sm-icon-line-v"></span>
+                </span>
+            </button>
+        </div>
+    </header>
+
+    <!-- StaggeredMenu Fixed Right-Side Drawer System -->
+    <div
+        id="staggered-menu"
+        class="staggered-menu-wrapper"
+        data-position="right"
+        data-open="false"
+        aria-hidden="true"
+    >
+        <!-- Lightweight Dimming Scrim (no GPU-blocking blur) -->
+        <div class="sm-backdrop" id="sm-backdrop"></div>
+
+        <!-- Staggered Colored Pre-Layers (Always anchored to physical right: 0) -->
+        <div id="sm-prelayers" class="sm-prelayers" aria-hidden="true">
+            <div class="sm-prelayer" style="background: #7f072b;"></div>
+            <div class="sm-prelayer" style="background: #1F1F24;"></div>
+        </div>
+
+        <!-- Main Staggered Menu Panel -->
+        <aside
+            id="staggered-menu-panel"
+            class="staggered-menu-panel"
+            aria-label="Primary Navigation"
+        >
+            <div class="sm-panel-inner">
+                <ul class="sm-panel-list" id="sm-panel-list" role="list" data-numbering="true">
+                    <li class="sm-panel-itemWrap">
+                        <a
+                            href="./index.html"
+                            class="sm-panel-item"
+                            data-menu-section="home"
+                            data-index="1"
+                            aria-label="Go to home page"
+                        >
+                            <span class="sm-panel-itemLabel" data-i18n="menuHome">Home</span>
+                        </a>
+                    </li>
+                    <li class="sm-panel-itemWrap">
+                        <a
+                            href="./about.html"
+                            class="sm-panel-item"
+                            data-menu-section="about"
+                            data-index="2"
+                            aria-label="Learn about us"
+                        >
+                            <span class="sm-panel-itemLabel" data-i18n="menuAbout">About</span>
+                        </a>
+                    </li>
+                    <li class="sm-panel-itemWrap">
+                        <a
+                            href="/services"
+                            class="sm-panel-item"
+                            data-menu-section="services"
+                            data-index="3"
+                            aria-label="View our services"
+                        >
+                            <span class="sm-panel-itemLabel" data-i18n="menuServices">Services</span>
+                        </a>
+                    </li>
+                    <li class="sm-panel-itemWrap">
+                        <a
+                            href="./projects.html"
+                            class="sm-panel-item"
+                            data-menu-section="projects"
+                            data-index="4"
+                            aria-label="View projects"
+                        >
+                            <span class="sm-panel-itemLabel" data-i18n="menuProjects">Projects</span>
+                        </a>
+                    </li>
+                    <li class="sm-panel-itemWrap">
+                        <a
+                            href="./awards.html"
+                            class="sm-panel-item"
+                            data-menu-section="awards"
+                            data-index="5"
+                            aria-label="View awards and recognition"
+                        >
+                            <span class="sm-panel-itemLabel" data-i18n="menuAwards">Awards</span>
+                        </a>
+                    </li>
+                </ul>
+
+                <!-- Single Email Address Above Socials Divider Line -->
+                <div class="sm-email-block" id="sm-email-block">
+                    <span class="sm-email-label">Direct Inquiries</span>
+                    <a href="mailto:Arnami.samco@gmail.com" class="sm-email-link">Arnami.samco@gmail.com</a>
+                </div>
+
+                <!-- Socials Block -->
+                <div class="sm-socials" id="sm-socials" aria-label="Social links">
+                    <h3 class="sm-socials-title" data-i18n="socialsTitle">Socials</h3>
+                    <ul class="sm-socials-list" id="sm-socials-list" role="list">
+                        <li class="sm-socials-item">
+                            <a
+                                href="https://www.linkedin.com/in/arian-nami-b1209633b"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                class="sm-socials-link"
+                            >LinkedIn</a>
+                        </li>
+                        <li class="sm-socials-item">
+                            <a
+                                href="https://www.instagram.com/arian.nmi"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                class="sm-socials-link"
+                            >Instagram</a>
+                        </li>
+                        <li class="sm-socials-item">
+                            <a
+                                href="https://www.behance.net/ariannami"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                class="sm-socials-link"
+                            >Behance</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </aside>
+    </div>
+
+    <main class="index-container" id="index-main">
+        <section class="home-hero" aria-labelledby="home-hero-heading">
+            <span class="category">Industrial Design &amp; 3D Visualization Studio</span>
+            <h1 id="home-hero-heading" class="home-hero-title">Engineering Form &amp; Atmospheric Hardware.</h1>
+            <div class="home-hero-actions">
+                <a href="./projects.html" class="home-cta-primary">View Projects &rarr;</a>
+                <a href="./about.html" class="home-cta-secondary">About Studio</a>
+            </div>
+        </section>
+    </main>
+
+    <!-- Case Study & Studio Section Quick-View Dialog -->
+    <dialog id="project-dialog" class="project-dialog" aria-labelledby="dialog-project-title">
+        <div class="dialog-content">
+            <div class="dialog-top">
+                <span id="dialog-project-category" class="category">Capabilities &amp; Disciplines</span>
+                <button type="button" id="dialog-close" class="menu-btn" data-i18n="close">← Back</button>
+            </div>
+            <h2 id="dialog-project-title" class="dialog-title">Services</h2>
+            <div id="dialog-single-view" hidden>
+                <img id="dialog-project-img" src="/assets/aistudio/Untitled1_da706d99.jpg" alt="Project 3D Studio Render" class="dialog-render" referrerpolicy="no-referrer">
+                <p id="dialog-project-desc" class="dialog-desc">Professional agricultural drone ecosystem featuring an autonomous quadrotor and ruggedized 500W solar-assisted mobile docking station with integrated battery telemetry and field kit storage.</p>
+            </div>
+            <div id="dialog-services-grid" class="services-dialog-grid"></div>
+        </div>
+    </dialog>
+
+    <script type="module" src="/script.js"></script>
+</body>
+</html>

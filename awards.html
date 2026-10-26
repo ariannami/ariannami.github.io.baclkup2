@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arian Nami | Awards &amp; Recognition</title>
+    <meta name="description" content="Interactive radial wheel showcase of industrial design awards, honors, and 3D visualization recognition by Arian Nami.">
+    <meta property="og:title" content="Arian Nami | Awards &amp; Recognition">
+    <meta property="og:description" content="Interactive radial wheel showcase of industrial design awards, honors, and 3D visualization recognition by Arian Nami.">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="stylesheet" href="/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body class="awards-page" data-menu-open="false" data-awards-view="wheel">
+    <!-- Subtle architectural grid backdrop matching carterogunsola.com/lab -->
+    <div class="awards-bg-grid" aria-hidden="true"></div>
+
+    <header class="top-header awards-top-header">
+        <div class="header-brand-group">
+            <a href="./index.html" class="logo" id="brand-logo" aria-label="Arian Nami Home"></a>
+            <a href="./index.html" class="header-back-btn" aria-label="Back to Home">← Back</a>
+        </div>
+        <p class="description">Arian Nami &nbsp;/&nbsp; Industrial Designer &amp; 3D Artist</p>
+        <div class="contact-info">
+            <span>Available for freelance</span>
+        </div>
+        <div class="controls">
+            <button
+                type="button"
+                id="menu-toggle"
+                class="menu-btn sm-toggle"
+                aria-expanded="false"
+                aria-controls="staggered-menu-panel"
+                aria-label="Open menu"
+            >
+                <span class="sm-toggle-textWrap" aria-hidden="true">
+                    <span class="sm-toggle-textInner" id="sm-toggle-textInner">
+                        <span class="sm-toggle-line">Menu</span>
+                        <span class="sm-toggle-line">Close</span>
+                    </span>
+                </span>
+                <span class="sm-icon" id="sm-toggle-icon" aria-hidden="true">
+                    <span class="sm-icon-line" id="sm-icon-line-h"></span>
+                    <span class="sm-icon-line sm-icon-line-v" id="sm-icon-line-v"></span>
+                </span>
+            </button>
+        </div>
+    </header>
+
+    <!-- StaggeredMenu Fixed Right-Side Drawer System -->
+    <div
+        id="staggered-menu"
+        class="staggered-menu-wrapper"
+        data-position="right"
+        data-open="false"
+        aria-hidden="true"
+    >
+        <div class="sm-backdrop" id="sm-backdrop"></div>
+
+        <div id="sm-prelayers" class="sm-prelayers" aria-hidden="true">
+            <div class="sm-prelayer" style="background: #7f072b;"></div>
+            <div class="sm-prelayer" style="background: #1F1F24;"></div>
+        </div>
+
+        <aside
+            id="staggered-menu-panel"
+            class="staggered-menu-panel"
+            aria-label="Primary Navigation"
+        >
+            <div class="sm-panel-inner">
+                <ul class="sm-panel-list" id="sm-panel-list" role="list" data-numbering="true">
+                    <li class="sm-panel-itemWrap">
+                        <a
+                            href="./index.html"
+                            class="sm-panel-item"
+                            data-menu-section="home"
+                            data-index="1"
+                            aria-label="Go to home page"
+                        >
+                            <span class="sm-panel-itemLabel">Home</span>
+                        </a>
+                    </li>
+                    <li class="sm-panel-itemWrap">
+                        <a
+                            href="./about.html"
+                            class="sm-panel-item"
+                            data-menu-section="about"
+                            data-index="2"
+                            aria-label="Learn about us"
+                        >
+                            <span class="sm-panel-itemLabel">About</span>
+                        </a>
+                    </li>
+                    <li class="sm-panel-itemWrap">
+                        <a
+                            href="/services"
+                            class="sm-panel-item"
+                            data-menu-section="services"
+                            data-index="3"
+                            aria-label="View our services"
+                        >
+                            <span class="sm-panel-itemLabel">Services</span>
+                        </a>
+                    </li>
+                    <li class="sm-panel-itemWrap">
+                        <a
+                            href="./projects.html"
+                            class="sm-panel-item"
+                            data-menu-section="projects"
+                            data-index="4"
+                            aria-label="View projects"
+                        >
+                            <span class="sm-panel-itemLabel">Projects</span>
+                        </a>
+                    </li>
+                    <li class="sm-panel-itemWrap">
+                        <a
+                            href="./awards.html"
+                            class="sm-panel-item"
+                            data-menu-section="awards"
+                            data-index="5"
+                            aria-label="View awards and recognition"
+                        >
+                            <span class="sm-panel-itemLabel">Awards</span>
+                        </a>
+                    </li>
+                </ul>
+
+                <div class="sm-email-block" id="sm-email-block">
+                    <span class="sm-email-label">Direct Inquiries</span>
+                    <a href="mailto:Arnami.samco@gmail.com" class="sm-email-link">Arnami.samco@gmail.com</a>
+                </div>
+
+                <div class="sm-socials" id="sm-socials" aria-label="Social links">
+                    <h3 class="sm-socials-title">Socials</h3>
+                    <ul class="sm-socials-list" id="sm-socials-list" role="list">
+                        <li class="sm-socials-item">
+                            <a
+                                href="https://www.linkedin.com/in/arian-nami-b1209633b"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                class="sm-socials-link"
+                            >LinkedIn</a>
+                        </li>
+                        <li class="sm-socials-item">
+                            <a
+                                href="https://www.instagram.com/arian.nmi"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                class="sm-socials-link"
+                            >Instagram</a>
+                        </li>
+                        <li class="sm-socials-item">
+                            <a
+                                href="https://www.behance.net/ariannami"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                class="sm-socials-link"
+                            >Behance</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </aside>
+    </div>
+
+    <!-- Main Interactive Lab/Wheel Canvas -->
+    <main class="awards-main" id="awards-main">
+        <h1 class="sr-only">Awards and Recognition — Interactive Wheel</h1>
+
+        <!-- 1. PRIMARY WHEEL VIEWPORT (carterogunsola.com/lab radial arc wheel + right preview stage) -->
+        <section
+            id="awards-wheel-section"
+            class="awards-wheel-section"
+            aria-label="Awards Wheel"
+        >
+            <!-- Left Radial Arc Wheel Track -->
+            <div
+                id="awards-wheel-viewport"
+                class="awards-wheel-viewport"
+                role="listbox"
+                aria-label="Awards and honors radial wheel"
+                tabindex="0"
+            >
+                <!-- Populated & updated dynamically at 60fps by initAwardsWheel in script.js, with SSR initial nodes for instant paint -->
+            </div>
+
+            <!-- Right Floating Preview Card (carterogunsola.com/lab right-hand stage) -->
+            <aside class="awards-preview-stage" aria-live="polite">
+                <div class="awards-preview-card" id="awards-preview-card">
+                    <div class="awards-preview-media is-light-bg">
+                        <img
+                            id="awards-preview-img"
+                            src="/assets/aistudio/Untitled26_6fe4bbd9.webp"
+                            alt="AGRI vision, first version — IDA Competition"
+                            class="awards-preview-img"
+                            referrerpolicy="no-referrer"
+                        >
+                        <div class="awards-preview-scrim" aria-hidden="true"></div>
+
+                        <!-- Center-bottom interactive micro-prompt matching carterogunsola.com/lab -->
+                        <button
+                            type="button"
+                            id="awards-preview-trigger"
+                            class="awards-preview-prompt"
+                            aria-label="Inspect selected award details"
+                        >
+                            <span class="awards-preview-icon-row" aria-hidden="true">
+                                <span class="awards-preview-badge-icon">
+                                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/>
+                                    </svg>
+                                </span>
+                                <span class="awards-preview-badge-code" id="awards-preview-index">01 / 05</span>
+                            </span>
+                            <span class="awards-preview-caption" id="awards-preview-caption">IDA Competition · Agricultural Tools · 2025 Bronze</span>
+                        </button>
+                    </div>
+
+                    <div class="awards-preview-meta">
+                        <div class="awards-preview-meta-top">
+                            <span id="awards-preview-org" class="awards-preview-org">IDA Competition · Agricultural Tools</span>
+                            <span class="awards-preview-sep" aria-hidden="true">·</span>
+                            <span id="awards-preview-year" class="awards-preview-year">2025</span>
+                            <span class="awards-preview-sep" aria-hidden="true">·</span>
+                            <span id="awards-preview-honor" class="awards-preview-honor">Bronze</span>
+                        </div>
+                        <p id="awards-preview-desc" class="awards-preview-desc">
+                            IDA Competition 2025 Bronze winner in Agricultural Tools for the first-generation AGRI vision autonomous field surveying and mobile solar docking system.
+                        </p>
+                        <div class="awards-preview-actions">
+                            <div class="awards-preview-links">
+                                <a
+                                    id="awards-external-link"
+                                    href="https://www.idesignawards.com/social/zoom.php?eid=9-65192-25"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    class="awards-action-link awards-action-link--primary"
+                                >
+                                    <span>IDA Award Page</span>
+                                    <svg width="11" height="11" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4.5 11.5L11.5 4.5M11.5 4.5H5.5M11.5 4.5V10.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                                </a>
+                                <button
+                                    type="button"
+                                    id="awards-open-detail"
+                                    class="awards-action-link"
+                                >
+                                    <span>Inspect</span>
+                                    <svg width="11" height="11" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4.5 11.5L11.5 4.5M11.5 4.5H5.5M11.5 4.5V10.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                                </button>
+                            </div>
+                            <div class="awards-step-controls" role="group" aria-label="Step wheel">
+                                <button
+                                    type="button"
+                                    id="awards-step-prev"
+                                    class="awards-step-btn"
+                                    aria-label="Previous award"
+                                >↑</button>
+                                <button
+                                    type="button"
+                                    id="awards-step-next"
+                                    class="awards-step-btn"
+                                    aria-label="Next award"
+                                >↓</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </aside>
+        </section>
+
+        <!-- 2. ALTERNATIVE LIST VIEW (when user toggles LIST in bottom bar) -->
+        <section
+            id="awards-list-section"
+            class="awards-alt-section"
+            aria-label="Awards List View"
+            hidden
+        >
+            <div class="awards-list-table" id="awards-list-container" role="list"></div>
+        </section>
+
+        <!-- 3. ALTERNATIVE GRID VIEW (when user toggles GRID in bottom bar) -->
+        <section
+            id="awards-grid-section"
+            class="awards-alt-section"
+            aria-label="Awards Grid View"
+            hidden
+        >
+            <div class="awards-grid-cards" id="awards-grid-container" role="list"></div>
+        </section>
+
+        <!-- Bottom-Center View Mode Switcher (LIST | WHEEL | GRID) matching carterogunsola.com/lab -->
+        <div class="awards-bottom-dock">
+            <div class="awards-view-switcher" role="group" aria-label="View mode">
+                <button
+                    type="button"
+                    class="awards-view-btn"
+                    data-view-mode="list"
+                    aria-pressed="false"
+                >LIST</button>
+                <button
+                    type="button"
+                    class="awards-view-btn is-active"
+                    data-view-mode="wheel"
+                    aria-pressed="true"
+                >WHEEL</button>
+                <button
+                    type="button"
+                    class="awards-view-btn"
+                    data-view-mode="grid"
+                    aria-pressed="false"
+                >GRID</button>
+            </div>
+        </div>
+    </main>
+
+    <!-- Award Detail & Services Modal Dialog -->
+    <dialog id="project-dialog" class="project-dialog" aria-labelledby="dialog-project-title">
+        <div class="dialog-content">
+            <div class="dialog-top">
+                <span id="dialog-project-category" class="category">Recognition &amp; Honors</span>
+                <button type="button" id="dialog-close" class="menu-btn">← Back</button>
+            </div>
+            <h2 id="dialog-project-title" class="dialog-title">AGRI vision, first version</h2>
+            <div id="dialog-single-view">
+                <img id="dialog-project-img" src="/assets/aistudio/Untitled26_6fe4bbd9.webp" alt="AGRI vision, first version — IDA Competition" class="dialog-render is-light-bg" referrerpolicy="no-referrer">
+                <p id="dialog-project-desc" class="dialog-desc">IDA Competition 2025 Bronze winner in Agricultural Tools for the first-generation AGRI vision autonomous field surveying and mobile solar docking system.</p>
+                <div id="dialog-project-actions" class="dialog-actions">
+                    <a
+                        id="dialog-external-link"
+                        href="https://www.idesignawards.com/social/zoom.php?eid=9-65192-25"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="awards-action-link awards-action-link--primary"
+                    >
+                        <span>View Official IDA Award Page</span>
+                        <svg width="11" height="11" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4.5 11.5L11.5 4.5M11.5 4.5H5.5M11.5 4.5V10.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    </a>
+                </div>
+            </div>
+            <div id="dialog-services-grid" class="services-dialog-grid" hidden></div>
+        </div>
+    </dialog>
+
+    <script type="module" src="/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,750 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ELEPHANT – Arian Nami</title>
+    <meta name="description" content="ELEPHANT — Modular solar-canopy EV charging station and industrial design case study by Arian Nami.">
+    <meta property="og:title" content="ELEPHANT – Arian Nami">
+    <meta property="og:description" content="ELEPHANT — Modular solar-canopy EV charging station and industrial design case study by Arian Nami.">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-main: #0f0f12;
+            --bg-band: #16161b;
+            --bg-slot: #191920;
+            --text-primary: #f4f4f6;
+            --text-secondary: rgba(244, 244, 246, 0.68);
+            --text-muted: rgba(244, 244, 246, 0.42);
+            --accent: #7f072b;
+            --accent-soft: rgba(127, 7, 43, 0.22);
+            --rule: rgba(255, 255, 255, 0.12);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            background: var(--bg-main);
+            color: var(--text-primary);
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        body {
+            background: var(--bg-main);
+            color: var(--text-primary);
+            overflow-x: hidden;
+            line-height: 1.65;
+        }
+
+        /* Minimal Floating Back Button & Project Prev/Next Arrows (AgriSense style) */
+        .floating-back {
+            position: fixed;
+            top: 26px;
+            left: 32px;
+            z-index: 60;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 18px;
+            background: rgba(15, 15, 18, 0.82);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid var(--rule);
+            color: var(--text-primary);
+            text-decoration: none;
+            font-size: 0.76rem;
+            font-weight: 600;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            transition: border-color 0.25s ease, background-color 0.25s ease, transform 0.25s ease;
+        }
+
+        .floating-back:hover {
+            border-color: var(--accent);
+            background: var(--accent-soft);
+            transform: translateX(-2px);
+        }
+
+        .proj-nav-arrow {
+            position: fixed;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 50;
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.06);
+            border: 1px solid var(--rule);
+            color: var(--text-primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            font-size: 1.25rem;
+            transition: background 0.25s ease, border-color 0.25s ease, transform 0.25s ease;
+        }
+
+        .proj-nav-arrow:hover {
+            background: var(--accent);
+            border-color: var(--accent);
+            transform: translateY(-50%) scale(1.06);
+        }
+
+        .proj-nav-prev {
+            left: 24px;
+        }
+
+        .proj-nav-next {
+            right: 24px;
+        }
+
+        /* Full-Bleed Hero Cover (Heinrich Zaunschirm AgriSense Cover Style) */
+        .hz-cover {
+            position: relative;
+            width: 100%;
+            height: 86vh;
+            min-height: 540px;
+            max-height: 920px;
+            background: #141418;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-bottom: 1px solid var(--rule);
+        }
+
+        .hz-cover img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+            display: block;
+        }
+
+        .hz-cover-scroll {
+            position: absolute;
+            bottom: 28px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 5;
+            width: 44px;
+            height: 44px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #ffffff;
+            text-decoration: none;
+            opacity: 0.85;
+            transition: opacity 0.2s ease, transform 0.2s ease;
+        }
+
+        .hz-cover-scroll:hover {
+            opacity: 1;
+            transform: translateX(-50%) translateY(4px);
+        }
+
+        /* Main Centered Editorial Container */
+        .hz-container {
+            max-width: 1180px;
+            margin: 0 auto;
+            padding: 0 36px;
+        }
+
+        /* Intro Header + 2-Column Overview & Metadata */
+        .hz-intro {
+            padding: 88px 0 96px;
+        }
+
+        .hz-title {
+            font-size: clamp(2.8rem, 5.2vw, 4.4rem);
+            font-weight: 800;
+            letter-spacing: -0.025em;
+            line-height: 1.02;
+            text-transform: uppercase;
+            color: var(--text-primary);
+        }
+
+        .hz-subtitle {
+            font-size: clamp(1.05rem, 1.5vw, 1.35rem);
+            font-weight: 300;
+            color: var(--text-secondary);
+            margin-top: 8px;
+        }
+
+        .hz-rule {
+            height: 1px;
+            background: var(--rule);
+            margin: 28px 0 48px;
+            border: 0;
+        }
+
+        .hz-intro-grid {
+            display: grid;
+            grid-template-columns: 1.15fr 0.85fr;
+            gap: 80px;
+            align-items: start;
+        }
+
+        .hz-intro-copy p {
+            font-size: 0.98rem;
+            color: var(--text-secondary);
+            line-height: 1.78;
+            margin-bottom: 24px;
+        }
+
+        .hz-meta-col {
+            display: grid;
+            grid-template-columns: 1fr auto;
+            gap: 28px;
+            align-items: start;
+        }
+
+        .hz-meta-list {
+            display: flex;
+            flex-direction: column;
+            gap: 22px;
+            font-size: 0.92rem;
+            color: var(--text-secondary);
+            line-height: 1.65;
+        }
+
+        .hz-meta-list strong {
+            color: var(--text-primary);
+            font-weight: 600;
+            display: block;
+            margin-bottom: 2px;
+        }
+
+        .hz-award-stamp {
+            display: inline-flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 14px 16px;
+            background: var(--accent);
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 0.72rem;
+            font-weight: 700;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            line-height: 1.35;
+            min-width: 128px;
+            text-align: right;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: transform 0.2s ease, filter 0.2s ease;
+        }
+
+        .hz-award-stamp:hover {
+            transform: translateY(-2px);
+            filter: brightness(1.12);
+        }
+
+        .hz-award-stamp small {
+            font-size: 0.62rem;
+            font-weight: 500;
+            opacity: 0.86;
+            margin-top: 4px;
+        }
+
+        /* Section Separation Band */
+        .hz-band {
+            width: 100%;
+            height: 44px;
+            background: var(--bg-band);
+            border-top: 1px solid var(--rule);
+            border-bottom: 1px solid var(--rule);
+        }
+
+        /* Chapter Header: 01 / PROCESS and 02 / FINAL DESIGN */
+        .hz-chapter-header {
+            padding: 84px 0 56px;
+        }
+
+        .hz-chapter-num {
+            display: block;
+            font-size: clamp(2.8rem, 4.5vw, 4rem);
+            font-weight: 200;
+            color: var(--text-muted);
+            line-height: 1;
+            margin-bottom: 6px;
+        }
+
+        .hz-chapter-title {
+            font-size: clamp(2.4rem, 4.2vw, 3.6rem);
+            font-weight: 800;
+            letter-spacing: -0.02em;
+            text-transform: uppercase;
+            line-height: 1.05;
+        }
+
+        .hz-jump-link {
+            display: inline-block;
+            margin-top: 12px;
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            text-decoration: underline;
+            text-underline-offset: 4px;
+            transition: color 0.2s ease;
+        }
+
+        .hz-jump-link:hover {
+            color: var(--accent);
+        }
+
+        /* Content Blocks */
+        .hz-block {
+            padding: 56px 0;
+        }
+
+        .hz-grid-12 {
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            gap: 32px;
+            align-items: center;
+        }
+
+        .hz-grid-12.align-start {
+            align-items: start;
+        }
+
+        .col-4 { grid-column: span 4; }
+        .col-5 { grid-column: span 5; }
+        .col-6 { grid-column: span 6; }
+        .col-7 { grid-column: span 7; }
+        .col-8 { grid-column: span 8; }
+        .col-12 { grid-column: span 12; }
+
+        .hz-h2 {
+            font-size: clamp(1.65rem, 2.5vw, 2.25rem);
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            line-height: 1.2;
+            margin-bottom: 16px;
+            color: var(--text-primary);
+        }
+
+        .hz-h4 {
+            font-size: 1.05rem;
+            font-weight: 700;
+            margin: 16px 0 10px;
+            color: var(--text-primary);
+        }
+
+        .hz-p {
+            font-size: 0.95rem;
+            color: var(--text-secondary);
+            line-height: 1.75;
+        }
+
+        .hz-bullets {
+            margin-top: 14px;
+            padding-left: 18px;
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            line-height: 1.75;
+        }
+
+        /* "How might we..." Statement Block */
+        .hz-hmw {
+            padding: 68px 0;
+            margin: 24px 0;
+            border-top: 1px solid var(--rule);
+            border-bottom: 1px solid var(--rule);
+        }
+
+        .hz-hmw-text {
+            font-size: clamp(1.45rem, 2.4vw, 2.05rem);
+            font-weight: 300;
+            line-height: 1.42;
+            color: var(--text-primary);
+            max-width: 46ch;
+        }
+
+        .hz-hmw-text strong {
+            font-weight: 800;
+            color: #ffffff;
+        }
+
+        /* Case Study Image Plates */
+        .hz-slot {
+            position: relative;
+            width: 100%;
+            background: linear-gradient(145deg, #1a1a22 0%, #121217 100%);
+            border: 1px solid var(--rule);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 24px;
+            transition: border-color 0.25s ease, background 0.25s ease;
+        }
+
+        .hz-slot.has-image {
+            display: block;
+            padding: 0;
+            border-color: rgba(255, 255, 255, 0.14);
+        }
+
+        .hz-slot img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .hz-slot-tag {
+            font-size: 0.68rem;
+            font-weight: 700;
+            letter-spacing: 0.16em;
+            text-transform: uppercase;
+            color: var(--accent);
+            margin-bottom: 6px;
+        }
+
+        .hz-slot-title {
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 4px;
+        }
+
+        .hz-slot-sub {
+            font-size: 0.78rem;
+            color: var(--text-muted);
+        }
+
+        .ratio-16-9 { aspect-ratio: 16 / 9; }
+        .ratio-21-9 { aspect-ratio: 21 / 9; }
+        .ratio-4-3  { aspect-ratio: 4 / 3; }
+        .ratio-3-4  { aspect-ratio: 3 / 4; }
+        .ratio-3-2  { aspect-ratio: 3 / 2; }
+        .ratio-1-1  { aspect-ratio: 1 / 1; }
+        .ratio-4-5  { aspect-ratio: 4 / 5; }
+
+        /* 6-Column Process Strip (AgriSense Exploration Strip) */
+        .hz-strip-6 {
+            display: grid;
+            grid-template-columns: repeat(6, 1fr);
+            gap: 12px;
+            margin-top: 28px;
+        }
+
+        /* 3-Column Macro Detail Row */
+        .hz-detail-3 {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            margin: 36px 0;
+        }
+
+        /* Footer & Scroll-To-Top Chevron */
+        .hz-footer {
+            margin-top: 80px;
+            padding: 48px 0 72px;
+            border-top: 1px solid var(--rule);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .hz-footer-links {
+            display: flex;
+            align-items: center;
+            gap: 28px;
+        }
+
+        .hz-footer-links a {
+            color: var(--text-primary);
+            text-decoration: none;
+            font-size: 0.82rem;
+            font-weight: 600;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            border-bottom: 1px solid var(--accent);
+            padding-bottom: 4px;
+        }
+
+        .hz-top-chevron {
+            position: fixed;
+            bottom: 28px;
+            right: 28px;
+            z-index: 50;
+            width: 42px;
+            height: 42px;
+            background: rgba(15, 15, 18, 0.85);
+            border: 1px solid var(--rule);
+            color: var(--text-primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            transition: border-color 0.2s ease, background 0.2s ease;
+        }
+
+        .hz-top-chevron:hover {
+            border-color: var(--accent);
+            background: var(--accent);
+        }
+
+        @media (max-width: 960px) {
+            .proj-nav-arrow {
+                display: none;
+            }
+
+            .hz-container {
+                padding: 0 20px;
+            }
+
+            .hz-intro-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .col-4, .col-5, .col-6, .col-7, .col-8 {
+                grid-column: span 12;
+            }
+
+            .hz-strip-6 {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .hz-detail-3 {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body id="top">
+    <!-- Floating Back to Projects -->
+    <a href="./projects.html" class="floating-back" aria-label="Back to Projects">← Back</a>
+
+    <!-- Left/Right Project Switcher Arrows (AgriSense style) -->
+    <a href="./agrivision.html" class="proj-nav-arrow proj-nav-prev" title="Previous Project: AGRIVISION" aria-label="Previous Project: AGRIVISION">&#8249;</a>
+    <a href="./sarv.html" class="proj-nav-arrow proj-nav-next" title="Next Project: Sarv" aria-label="Next Project: Sarv">&#8250;</a>
+
+    <!-- Full-Bleed Hero Cover -->
+    <section class="hz-cover" aria-label="Elephant Hero Cover">
+        <img src="/assets/aistudio/Untitled25_c2560062.webp" alt="ELEPHANT — Modular Solar-Canopy EV Charging Station">
+        <a href="#intro" class="hz-cover-scroll" aria-label="Scroll to project overview">
+            <svg width="28" height="16" viewBox="0 0 28 16" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M2 2L14 14L26 2"/>
+            </svg>
+        </a>
+    </section>
+
+    <!-- Project Title, Overview & Metadata (AgriSense Section 0) -->
+    <main>
+        <section id="intro" class="hz-container hz-intro">
+            <h1 class="hz-title">ELEPHANT</h1>
+            <p class="hz-subtitle">modular solar-canopy EV charging station &amp; urban energy kiosk</p>
+            <hr class="hz-rule">
+
+            <div class="hz-intro-grid">
+                <div class="hz-intro-copy">
+                    <p>
+                        Rapid electric vehicle adoption demands charging infrastructure that integrates effortlessly into contemporary urban architecture rather than cluttering streets with utilitarian cabinets.
+                    </p>
+                    <p>
+                        <strong>Elephant</strong> reimagines high-output EV charging as a modular architectural canopy system. Combining sculptural load-bearing columns, overhead photovoltaic arrays, and intuitive dual-bay kiosk terminals, the station delivers autonomous solar buffer storage and frictionless cable ergonomics.
+                    </p>
+                </div>
+
+                <div class="hz-meta-col">
+                    <div class="hz-meta-list">
+                        <div>
+                            <strong>Industrial Design Project</strong>
+                            Designer: Arian Nami<br>
+                            Category: EV Charging Station<br>
+                            2025
+                        </div>
+                        <div>
+                            <strong>Contributions:</strong>
+                            Ideation &amp; Spatial Architecture<br>
+                            3D CAD Surfacing<br>
+                            Rendering + Visualization
+                        </div>
+                    </div>
+
+                    <a href="https://award.kioskedia.com/winner/2597" target="_blank" rel="noopener noreferrer" class="hz-award-stamp">
+                        <span>Kioskedia<br>Design<br>Awards</span>
+                        <small>2025 Winner</small>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <div class="hz-band" aria-hidden="true"></div>
+
+        <!-- 01 / PROCESS -->
+        <section class="hz-container" id="process">
+            <header class="hz-chapter-header">
+                <span class="hz-chapter-num">01</span>
+                <h2 class="hz-chapter-title">PROCESS</h2>
+                <a href="#final-design" class="hz-jump-link">Go to final result</a>
+            </header>
+
+            <!-- Background (Untitled33.webp) -->
+            <div class="hz-block hz-grid-12">
+                <div class="col-5">
+                    <h3 class="hz-h2">Background</h3>
+                    <p class="hz-p">
+                        As electric vehicle fleets expand globally, public charging stations are transitioning from hidden highway rest stops to high-visibility civic landmarks. Infrastructure must balance high-power solar buffering, weather protection, and intuitive driver interaction from the moment of arrival.
+                    </p>
+                </div>
+                <div class="col-7">
+                    <div class="hz-slot ratio-16-9 has-image" data-slot="elephant-bg" data-file="Untitled33.webp">
+                        <img src="/assets/aistudio/Untitled33_df2adf40.webp" alt="Driver cabin perspective approaching the Elephant EV charging station at dusk">
+                    </div>
+                </div>
+            </div>
+
+            <!-- 3-Column Challenge Cards + Right Heading (Untitled36, Untitled35, Untitled37) -->
+            <div class="hz-block hz-grid-12 align-start">
+                <div class="col-8">
+                    <div class="hz-grid-12 align-start" style="gap: 20px;">
+                        <div class="col-4">
+                            <div class="hz-slot ratio-3-4 has-image" data-slot="elephant-ch1" data-file="Untitled36.webp">
+                                <img src="/assets/aistudio/Untitled36_7a09d486.webp" alt="Elephant EV station beneath the branching photovoltaic solar canopy">
+                            </div>
+                            <h4 class="hz-h4">Grid Peak Demand</h4>
+                            <p class="hz-p">High-output fast chargers create sudden power spikes on municipal distribution grids.</p>
+                            <ul class="hz-bullets">
+                                <li>Organic branching solar canopy</li>
+                                <li>Perforated battery-buffer base</li>
+                                <li>Modular multi-bay scalability</li>
+                            </ul>
+                        </div>
+
+                        <div class="col-4">
+                            <div class="hz-slot ratio-3-4 has-image" data-slot="elephant-ch2" data-file="Untitled35.webp">
+                                <img src="/assets/aistudio/Untitled35_fd582776.webp" alt="Overhead elephant-trunk holster with green status LED ring and suspended EV connector">
+                            </div>
+                            <h4 class="hz-h4">User &amp; Cable Friction</h4>
+                            <p class="hz-p">Heavy charging cables dragging on wet pavement degrade user comfort and hardware longevity.</p>
+                            <ul class="hz-bullets">
+                                <li>Cantilevered "trunk" overhead holster</li>
+                                <li>360° glowing green status halo</li>
+                                <li>Zero-drag suspended nozzle reach</li>
+                            </ul>
+                        </div>
+
+                        <div class="col-4">
+                            <div class="hz-slot ratio-3-4 has-image" data-slot="elephant-ch3" data-file="Untitled37.webp">
+                                <img src="/assets/aistudio/Untitled37_a1f9ce22.webp" alt="Studio elevation of white EV sedan connected to the Elephant charging kiosk">
+                            </div>
+                            <h4 class="hz-h4">Architectural Presence</h4>
+                            <p class="hz-p">Conventional sheet-metal charging boxes lack visual cohesion in modern urban environments.</p>
+                            <ul class="hz-bullets">
+                                <li>Monolithic brushed-metal silhouette</li>
+                                <li>Recessed cyan ambient light channel</li>
+                                <li>Compact civic bay footprint</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-4" style="padding-top: 32px;">
+                    <h3 class="hz-h2">Charging Infrastructure Challenges</h3>
+                    <p class="hz-p">
+                        The primary design challenge lies in uniting solar energy harvesting, overhead cable ergonomics, and circular-economy incentives into a single cohesive architectural landmark.
+                    </p>
+                </div>
+            </div>
+
+            <!-- How might we... -->
+            <div class="hz-hmw">
+                <p class="hz-hmw-text">
+                    <strong>How might we</strong> design a biomorphic, solar-assisted EV charging station that elevates urban streetscapes while rewarding sustainable driver habits?
+                </p>
+            </div>
+
+            <!-- The Idea (Untitled38.webp) -->
+            <div class="hz-block hz-grid-12">
+                <div class="col-7">
+                    <div class="hz-slot ratio-1-1 has-image" data-slot="elephant-idea" data-file="Untitled38.webp">
+                        <img src="/assets/aistudio/Untitled38_8edab02a.webp" alt="Biomorphic silhouette study comparing an elephant's trunk to the Elephant EV charging kiosk">
+                    </div>
+                </div>
+                <div class="col-5">
+                    <h3 class="hz-h2">The Idea</h3>
+                    <p class="hz-p">
+                        Inspired directly by the powerful yet graceful silhouette of an elephant's head and trunk, <strong>Elephant</strong> cantilevers the charging connector from an overhead arched arm while housing interactive telemetry and a reverse-vending bottle recycling intake in its main column.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <div class="hz-band" aria-hidden="true"></div>
+
+        <!-- 02 / FINAL DESIGN -->
+        <section class="hz-container" id="final-design">
+            <header class="hz-chapter-header">
+                <span class="hz-chapter-num">02</span>
+                <h2 class="hz-chapter-title">FINAL DESIGN</h2>
+            </header>
+
+            <!-- Primary Final Render (Untitled34.webp) -->
+            <div class="hz-block">
+                <div class="hz-slot ratio-16-9 has-image" data-slot="elephant-final-hero" data-file="Untitled34.webp">
+                    <img src="/assets/aistudio/Untitled34_bca2374d.webp" alt="Elephant EV Charging Kiosk 3/4 Studio Hero Render">
+                </div>
+            </div>
+
+            <!-- Package / Circular Bottle Recycling Integration (Untitled39.webp) + 3-Up Detail Row (Untitled40, Untitled41, Untitled25) -->
+            <div class="hz-block">
+                <div class="hz-grid-12">
+                    <div class="col-7">
+                        <div class="hz-slot ratio-16-9 has-image" data-slot="elephant-package" data-file="Untitled39.webp">
+                            <img src="/assets/aistudio/Untitled39_0bba7c9a.webp" alt="Close-up of PET plastic bottles entering the illuminated circular recycling port on the Elephant kiosk">
+                        </div>
+                    </div>
+                    <div class="col-5">
+                        <h3 class="hz-h2">Circular Recycling &amp; Package</h3>
+                        <p class="hz-p">
+                            Beneath the high-contrast charging telemetry display sits an illuminated circular intake port. While waiting for their vehicle to charge, drivers can insert used PET plastic bottles into the kiosk to receive instant charging fee discounts—turning idle charging time into tangible environmental action.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="hz-detail-3">
+                    <div class="hz-slot ratio-3-4 has-image" data-slot="elephant-det1" data-file="Untitled40.webp">
+                        <img src="/assets/aistudio/Untitled40_5170e296.webp" alt="Ergonomic EV charging handle with green LED spine and orthographic views">
+                    </div>
+                    <div class="hz-slot ratio-3-4 has-image" data-slot="elephant-det2" data-file="Untitled41.webp">
+                        <img src="/assets/aistudio/Untitled41_0833410b.webp" alt="Nighttime charging bay scene with Kioskedia International Awards recognition">
+                    </div>
+                    <div class="hz-slot ratio-3-4 has-image" data-slot="elephant-det3" data-file="Untitled25.webp">
+                        <img src="/assets/aistudio/Untitled25_c2560062.webp" alt="Aerial overview of the 4-bay modular solar canopy EV charging station">
+                    </div>
+                </div>
+            </div>
+
+            <footer class="hz-footer">
+                <span>ELEPHANT &nbsp;·&nbsp; EV Charging Station Case Study</span>
+                <div class="hz-footer-links">
+                    <a href="./projects.html">← All Projects</a>
+                    <a href="./sarv.html">Next: Sarv →</a>
+                </div>
+            </footer>
+        </section>
+    </main>
+
+    <a href="#top" class="hz-top-chevron" aria-label="Back to top">
+        <svg width="18" height="10" viewBox="0 0 18 10" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M1 9L9 1L17 9"/>
+        </svg>
+    </a>
+</body>
+</html>
